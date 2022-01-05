@@ -24,14 +24,14 @@ public class RedParkingAuton extends CommandOpMode {
     // Start Pose
     private Pose2d startPose = new Pose2d(0.0, -62.0, Math.toRadians(0.0));
 
-    // Trajectory
-    private Trajectory traj0 = mecanumDriveS.trajectoryBuilder(startPose).
-            forward(35.0)
-            .build();
 
     @Override
     public void initialize() {
         mecanumDriveS = new MecanumDriveSubsystem(new SampleMecanumDrive(hardwareMap), false);
+
+        Trajectory traj0 = mecanumDriveS.trajectoryBuilder(startPose).
+                forward(35.0)
+                .build();
 
         TrajectoryFollowerCommand autonomous = new TrajectoryFollowerCommand(mecanumDriveS, traj0);
 

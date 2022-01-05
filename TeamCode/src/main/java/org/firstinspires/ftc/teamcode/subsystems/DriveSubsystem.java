@@ -23,7 +23,7 @@ public class DriveSubsystem extends SubsystemBase {
     }
 
     public void drive(double strafeSpeed, double forwardSpeed, double turnSpeed) {
-        mecanumDrive.driveFieldCentric(-strafeSpeed, -forwardSpeed, -turnSpeed, revIMU.getHeading(), false);
+        mecanumDrive.driveFieldCentric(-strafeSpeed, -forwardSpeed, -turnSpeed, revIMU.getHeading(), true);
     }
 
 

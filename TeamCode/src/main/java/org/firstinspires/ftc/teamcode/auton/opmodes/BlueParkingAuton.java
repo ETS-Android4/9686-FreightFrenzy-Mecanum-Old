@@ -38,6 +38,10 @@ public class BlueParkingAuton extends CommandOpMode {
     public void initialize() {
         mecanumDriveS = new MecanumDriveSubsystem(new SampleMecanumDrive(hardwareMap), false);
 
+        Trajectory traj0 = mecanumDriveS.trajectoryBuilder(startPose).
+                forward(35.0)
+                .build();
+
         TrajectoryFollowerCommand autonomous = new TrajectoryFollowerCommand(mecanumDriveS, traj0);
 
         if(isStopRequested()){
