@@ -11,7 +11,7 @@ public class DropCommand extends CommandBase {
 
     public DropCommand(DropSubsystem dropSubsystem) {
         dropS = dropSubsystem;
-        addRequirements(dropSubsystem);
+        addRequirements(dropS);
     }
 
     @Override
